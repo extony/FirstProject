@@ -1,0 +1,61 @@
+<html>
+
+	<!--
+	Anthony Baker
+	CPSC 215 Assignment 2
+	This web page is designed to show a user how much time can be saved by driving at a particular speed (over 55).
+	-->
+
+<body>
+
+<script>
+function speedCalculated(speed){
+	
+	if(isNaN(speed)){
+		alert("Please enter a valid number");
+		return;
+	}
+		
+	
+	var originalTime = ((8 + 1/3) / 55);
+	var newTime = ((8 + 1/3) / speed);
+
+	var timeSaved = originalTime - newTime;
+	
+	timeSaved = timeSaved * 3600;
+	
+	timeSaved = Math.floor(timeSaved * 10 + .5) / 10;
+
+	document.getElementById("output").innerHTML = timeSaved + " seconds saved!!";
+
+	
+}
+</script>
+
+
+<h2> SPEEDING TIME-SAVING CALCULATOR   -   You can save time! </h2>
+
+<br>
+
+<p> Some things to keep in mind...</p>
+
+<p> - Slippery Rock to Grove City is 8 and one third miles.</p>
+
+<p> - The speed limit is 55 mph the entire way.</p>
+
+<br>
+
+<br>
+
+<p> Input the speed, in mph, that you would travel at: </p>
+
+<input type="text" id="input" name="inputBox" placeholder="ex. 55">
+
+<input type="button" onclick="speedCalculated(document.getElementById('input').value)" value="Calculate">
+
+
+<p id="output"></p>
+
+
+</body>
+</html>
